@@ -1,0 +1,61 @@
+
+.activityBox {
+    display: flex;
+    height: 80px;
+    margin: 0px 5px 0px 5px;
+    font-size: 13px;
+}
+
+.activtyRoomBoxA {
+    flex: 1 1 auto;
+    max-width: 200px;
+    margin: 0px 20px 0px 5px;
+    padding: 5px;
+    background-color: #e8e8e8;
+}
+
+.activtyRoomBoxB {
+    height: 100%;
+}
+
+.activtyRoomBoxColor1 {
+    background-color: #008000;
+    color: #ffffff;
+}
+
+.activtyRoomBoxColor2 {
+    background-color: #9c171f;
+    color: #ffffff;
+}
+
+.activtyRoomBoxColor3 {
+    background-color: #6c605c;
+    color: #ffffff;
+}
+
+.activtyRoomBox1 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-top: solid #282828 3px;
+}
+
+.activtyRoomBox2 {
+    margin-top: 5px;
+    margin-bottom: 0px;
+    border-top: solid #282828 3px;
+}
+
+.activtyRoomBox3 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.activtyRoomBox4 {
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+.activitySelected {
+    background-color: #e8e8e8;
+    color: #000000;
+}

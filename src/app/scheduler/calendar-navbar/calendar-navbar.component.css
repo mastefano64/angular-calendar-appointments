@@ -1,0 +1,34 @@
+
+.containerBox {
+    display: flex;
+}
+
+.panelDatePicker {
+    flex: 0 0 50px;
+}
+
+.panelSearch {
+    flex: 1 1 auto;
+}
+
+.mat-icon-button {
+    margin-top: 10px;
+}
+
+.mat-datepicker-popup {
+    position: relative;
+    top: 110px
+} 
+
+.mat-button-toggle-checked {
+    background-color: #3f51b5;
+    color: #ffffff;
+}
+
+.containerStatusbar {
+    height: 20px;
+}
+
+.panelStatusbar {
+    display: inline-block;
+}

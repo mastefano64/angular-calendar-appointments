@@ -1,0 +1,50 @@
+table {
+    border-spacing: 0;
+    width: 100%;
+  }
+  
+  tr.head {
+    height: 56px;
+    font-weight: bold;
+  }
+
+  tr.head .headCelTimeGio {
+    width: 70px;
+  }
+
+  tr.head .headCelDataGio {
+    width: auto;
+  }
+
+  tr.head .headCelTimeSet {
+    width: 70px;
+  }
+
+  tr.head .headCelDataSet {
+    width: 220px;
+  }
+  
+  tr.rows {
+    height: 80px;
+  }
+  
+  td {
+    padding: 0;
+    border-bottom-width: 1px;
+    border-bottom-color: lightgray;
+    border-bottom-style: solid;
+    text-align: left;
+  }
+  
+    th:first-child, td:first-child {
+      padding-left: 2px;
+    }
+  
+    th:last-child, td:last-child {
+      padding-right: 2px;
+    }
+  
+    .rows span {
+      font-size: 13px;
+    }    
+ 

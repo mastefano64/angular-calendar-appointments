@@ -1,0 +1,49 @@
+<div>
+  <div class="containerBox">
+    <div class="panelDatePicker">
+      <button mat-icon-button (click)="picker.open()">
+        <mat-icon>calendar_today</mat-icon>
+      </button>
+      <mat-datepicker #picker></mat-datepicker>
+      <input matInput [matDatepicker]="picker" name="datpicker" [ngModel]="datpicker"
+                 [hidden]="'true'" (dateChange)="onPickerChange($event)">        
+    </div>
+    <div *ngIf="slectedview === 'giorno'" class="panelSearch">
+      <button mat-raised-button color="primary" (click)="onPrevMonth()">Mese precedente</button>&nbsp;
+      <button mat-raised-button color="primary" (click)="onNextMonth()">Mese successivo</button>&nbsp;
+      <button mat-raised-button color="primary" (click)="onPrevDay()">Giorno precedente</button>&nbsp;
+      <button mat-raised-button color="primary" (click)="onNextDay()">Giorno successivo</button>&nbsp;
+      <mat-form-field>
+        <mat-select name="room" [ngModel]="roomid" (selectionChange)="onRoomChange($event)">
+          <mat-option *ngFor="let room of rooms" [value]="room.key">
+            {{ room.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div *ngIf="slectedview === 'settimana'" class="panelSearch">
+      <button mat-raised-button color="primary" (click)="onPrevWeek()">Settimana precedente</button>&nbsp;
+      <button mat-raised-button color="primary" (click)="onNextWeek()">Settimana Successiva</button>&nbsp;
+      <mat-form-field>
+        <mat-select name="room" [ngModel]="roomid" (selectionChange)="onRoomChange($event)">
+          <mat-option *ngFor="let room of rooms" [value]="room.key">
+            {{ room.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="panelSwitcher">
+      <mat-button-toggle-group [value]="slectedview" (change)="onViewChange($event)">
+        <mat-button-toggle value="giorno">Giorno</mat-button-toggle>
+        <mat-button-toggle value="settimana">Settimana</mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+  </div>
+  <div class="containerStatusbar">
+    {{ currvalues?.dayWeekName }} {{ currvalues?.day }} {{ currvalues?.monthName }} {{ currvalues?.year }}
+    <div class="panelStatusbar" *ngIf="statusbar">
+      &nbsp;-&nbsp;&nbsp;Activity:
+      {{ statusbar.startTime }} / {{ statusbar.endTime }}&nbsp;{{ statusbar.title }}&nbsp;
+    </div>    
+  </div>
+</div>

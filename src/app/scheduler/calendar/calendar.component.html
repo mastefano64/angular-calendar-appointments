@@ -1,0 +1,73 @@
+<div>
+  <div>
+    <app-calendarnavbar 
+      [year]="year" 
+      [month]="month" 
+      [day]="day"
+      [statusbar]="statusbar"
+      [slectedview]="slectedview"
+      [rooms]="rooms"
+      [manager]="manager" 
+      (changeday)="onDayChanged($event)"
+      (changeweek)="onWeekChanged($event)"
+      (changemonth)="onMonthChanged($event)"
+      (changeroom)="onRomChanged($event)"
+      (changeview)="onViewChanged($event)">
+    </app-calendarnavbar>
+  </div>
+  <div>
+
+    <div *ngIf="slectedview === 'giorno'" class="panelSearch">
+      <table>
+        <tr class="head">
+          <td class="headCelTimeGio">Orario</td>
+          <td class="headCelDataGio">Attività</td>
+        </tr>
+        <tr class="rows" *ngFor="let hour of stephours">
+          <td>
+            <app-celtime [hour]="hour"></app-celtime>
+          </td>
+          <td>
+            <app-attivity 
+              [slectedview]="slectedview" 
+              [hour]="hour" 
+              [date]="currentYMD" 
+              [datasource]="datasource"
+              (changestatusbar)="onStatusbarChanged($event)"
+              (createactivity)="onCreateActivity($event)"
+              (editactivity)="onEditActivity($event)">
+            </app-attivity>
+          </td>
+        </tr>
+      </table>   
+    </div>
+
+    <div *ngIf="slectedview === 'settimana'" class="panelSearch">
+      <table>
+        <tr class="head">
+          <td class="headCelTimeSet">Orario</td>
+          <td class="headCelDataSet" *ngFor="let day of stepdays">
+            <app-celdate [date]="day"></app-celdate>
+          </td>
+        </tr>
+        <tr class="rows" *ngFor="let hour of stephours">
+          <td>
+            <app-celtime [hour]="hour"></app-celtime>
+          </td>
+          <td *ngFor="let day of stepdays">
+            <app-attivity 
+              [slectedview]="slectedview" 
+              [hour]="hour" 
+              [date]="day.date" 
+              [datasource]="datasource"
+              (changestatusbar)="onStatusbarChanged($event)"
+              (createactivity)="onCreateActivity($event)"
+              (editactivity)="onEditActivity($event)">
+            </app-attivity>
+          </td>
+        </tr>
+      </table>       
+    </div>
+
+  </div>
+</div>

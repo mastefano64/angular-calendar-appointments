@@ -1,0 +1,18 @@
+<div class="pagescheduler">
+  <app-calendar 
+    [year]="year" 
+    [month]="month" 
+    [day]="day"
+    [startHoursAM]="startHoursAM" 
+    [endHoursAM]="endHoursAM" 
+    [stepHoursAM]="stepHoursAM"
+    [startHoursPM]="startHoursPM" 
+    [endHoursPM]="endHoursPM" 
+    [stepHoursPM]="stepHoursPM"
+    [datasource]="datasource"
+    [rooms]="rooms"
+    (changeactivity)="onActivityChanged($event)"
+    (createactivity)="onCreateActivity($event)"
+    (editactivity)="onEditActivity($event)">
+  </app-calendar>
+</div>
